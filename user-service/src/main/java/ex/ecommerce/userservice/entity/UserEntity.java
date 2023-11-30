@@ -1,4 +1,4 @@
-package ex.ecommerce.userservice.repository.entity;
+package ex.ecommerce.userservice.entity;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 

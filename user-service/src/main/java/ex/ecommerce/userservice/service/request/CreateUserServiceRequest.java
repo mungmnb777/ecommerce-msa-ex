@@ -2,7 +2,7 @@ package ex.ecommerce.userservice.service.request;
 
 import java.util.UUID;
 
-import ex.ecommerce.userservice.repository.entity.UserEntity;
+import ex.ecommerce.userservice.entity.UserEntity;
 import lombok.Builder;
 
 @Builder

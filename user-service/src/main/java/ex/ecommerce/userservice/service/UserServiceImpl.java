@@ -6,8 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import ex.ecommerce.userservice.repository.UserRepository;
-import ex.ecommerce.userservice.repository.entity.UserEntity;
+import ex.ecommerce.userservice.entity.repository.UserRepository;
+import ex.ecommerce.userservice.entity.UserEntity;
 import ex.ecommerce.userservice.service.request.CreateUserServiceRequest;
 import ex.ecommerce.userservice.service.response.CreateUserServiceResponse;
 import ex.ecommerce.userservice.service.response.GetUserServiceResponse;
