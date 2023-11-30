@@ -15,11 +15,11 @@ public record CreateOrderServiceRequest(
 ) {
 	public OrderEntity convert() {
 		return OrderEntity.builder()
-			.productId(productId)
-			.quantity(quantity)
-			.unitPrice(unitPrice)
+			.productId(this.productId)
+			.quantity(this.quantity)
+			.unitPrice(this.unitPrice)
 			.orderId(UUID.randomUUID().toString())
-			.userId(UUID.randomUUID().toString())
+			.userId(this.userId)
 			.build();
 	}
 }
