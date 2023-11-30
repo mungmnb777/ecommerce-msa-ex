@@ -1,5 +1,8 @@
 package ex.ecommerce.userservice.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +33,13 @@ public class UserServiceImpl implements UserService {
 	public GetUserServiceResponse getUserById(String userId) {
 		UserEntity entity = userRepository.findByUserId(userId).orElseThrow(IllegalArgumentException::new);
 		return GetUserServiceResponse.of(entity);
+	}
+
+	@Override
+	public List<GetUserServiceResponse> getAllUsers() {
+		List<UserEntity> entities = userRepository.findAll();
+		return entities.stream()
+			.map(GetUserServiceResponse::of)
+			.collect(Collectors.toList());
 	}
 }

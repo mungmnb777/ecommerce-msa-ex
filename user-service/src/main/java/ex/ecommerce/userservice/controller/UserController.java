@@ -1,6 +1,8 @@
 package ex.ecommerce.userservice.controller;
 
 import java.net.URI;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,5 +42,16 @@ public class UserController {
 		GetUserServiceResponse response = userService.getUserById(userId);
 
 		return ResponseEntity.ok(UserWebResponse.of(response));
+	}
+
+	@GetMapping
+	public ResponseEntity<List<UserWebResponse>> getAllUsers() {
+		List<GetUserServiceResponse> response = userService.getAllUsers();
+
+		return ResponseEntity.ok(
+			response.stream()
+				.map(UserWebResponse::of)
+				.collect(Collectors.toList())
+		);
 	}
 }
